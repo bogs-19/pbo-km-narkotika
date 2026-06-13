@@ -1,0 +1,30 @@
+.btn-neon {
+    -fx-background-color: #38bdf8;
+    -fx-text-fill: #0f172a;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 8;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 5, 0, 0, 3);
+}
+
+.btn-neon:hover {
+    -fx-background-color: #7dd3fc;
+    -fx-translate-y: -2px;
+    -fx-effect: dropshadow(three-pass-box, rgba(56,189,248,0.8), 15, 0, 0, 5);
+    -fx-cursor: hand;
+}
+
+
+.btn-neon:pressed {
+    -fx-background-color: #0284c7;
+    -fx-translate-y: 1px;
+    -fx-effect: dropshadow(three-pass-box, rgba(56,189,248,0.3), 5, 0, 0, 1);
+}
+
+.art-3d {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 25, 0, 0, 15);
+}
+
+.text-3d {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 10, 0, 0, 5);
+}
