@@ -1,142 +1,116 @@
-.btn-neon {
-    -fx-background-color: #38bdf8;
-    -fx-text-fill: #0f172a;
-    -fx-font-weight: bold;
-    -fx-font-size: 14px;
-    -fx-background-radius: 8;
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 5, 0, 0, 3);
-}
+/* =======================================================
+   TEMA DARK-NEON KMS NARKOTIKA (BUG FIX V1.5)
+   ======================================================= */
 
-.btn-neon:hover {
-    -fx-background-color: #7dd3fc;
-    -fx-translate-y: -2px;
-    -fx-effect: dropshadow(three-pass-box, rgba(56,189,248,0.8), 15, 0, 0, 5);
-    -fx-cursor: hand;
-}
+.text-neon-cyan { -fx-text-fill: #38bdf8; }
+.text-neon-magenta { -fx-text-fill: #f472b6; }
+.text-neon-orange { -fx-text-fill: #fb923c; }
 
-
-.btn-neon:pressed {
-    -fx-background-color: #0284c7;
-    -fx-translate-y: 1px;
-    -fx-effect: dropshadow(three-pass-box, rgba(56,189,248,0.3), 5, 0, 0, 1);
-}
-
-.art-3d {
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 25, 0, 0, 15);
-}
-
-.text-3d {
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 10, 0, 0, 5);
-}
-
-.table-view {
-    -fx-background-color: transparent;
-    -fx-border-color: #334155;
-    -fx-border-radius: 8;
-    -fx-background-radius: 8;
-}
-
-.table-view .column-header-background {
-    -fx-background-color: #1e293b;
-    -fx-background-radius: 8 8 0 0;
-}
-
-.table-view .column-header {
-    -fx-background-color: transparent;
-    -fx-border-width: 0 0 2 0;
-    -fx-border-color: #38bdf8; /* Garis bawah neon cyan */
-}
-
-.table-view .column-header .label {
-    -fx-text-fill: #38bdf8;
-    -fx-font-weight: 900;
-    -fx-font-size: 13px;
-}
-
-.table-row-cell {
-    -fx-background-color: #0f172a;
-    -fx-border-width: 0 0 1 0;
-    -fx-border-color: #1e293b;
-    -fx-text-fill: #94a3b8;
-    -fx-font-size: 13px;
-}
-
-.table-row-cell:odd {
-    -fx-background-color: #151f32;
-}
-
-.table-row-cell:hover {
-    -fx-background-color: #1e293b;
-}
-
-.table-row-cell:selected {
-    -fx-background-color: #0c4a6e;
-    -fx-text-fill: #f8fafc;
-}
-
-.table-view .filler {
-    -fx-background-color: #1e293b;
-}
-
-.btn-hamburger {
-    -fx-background-color: #0f172a;
-    -fx-background-radius: 8;
-    -fx-min-width: 40px;
-    -fx-min-height: 40px;
-    -fx-max-width: 40px;
-    -fx-max-height: 40px;
-    -fx-border-color: #334155;
-    -fx-border-radius: 8;
-    -fx-text-fill: #38bdf8;
-    -fx-font-size: 20px;
-    -fx-alignment: center;
-    -fx-padding: 0 0 2 0;
-}
-
-.btn-hamburger:hover {
-    -fx-background-color: #1e293b;
-    -fx-border-color: #38bdf8;
-    -fx-effect: dropshadow(three-pass-box, rgba(56, 189, 248, 0.4), 10, 0, 0, 0);
-}
+.scroll-pane { -fx-background-color: transparent; -fx-border-width: 0; }
+.scroll-pane .viewport { -fx-background-color: transparent; }
 
 .card-stat {
     -fx-background-color: #1e293b;
-    -fx-background-radius: 12;
-    -fx-border-color: #334155;
-    -fx-border-radius: 12;
-    -fx-padding: 20;
+    -fx-background-radius: 16;
+    -fx-border-color: rgba(255, 255, 255, 0.05);
+    -fx-border-radius: 16;
+    -fx-padding: 25;
 }
-
-.card-stat-active {
+.card-stat:hover {
+    -fx-cursor: hand;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
     -fx-background-color: #1e293b;
-    -fx-background-radius: 12;
-    -fx-border-color: #38bdf8;
-    -fx-border-width: 2;
-    -fx-border-radius: 12;
-    -fx-padding: 20;
-    -fx-effect: dropshadow(three-pass-box, rgba(56, 189, 248, 0.2), 15, 0, 0, 0);
+    -fx-border-color: linear-gradient(to bottom right, #38bdf8, #f472b6, #fb923c);
+    -fx-border-width: 3px;
+    -fx-effect: dropshadow(three-pass-box, rgba(244, 114, 182, 0.4), 30, 0, 0, 0);
 }
 
-.search-field {
-    -fx-background-color: #0f172a;
-    -fx-border-color: #334155;
-    -fx-border-radius: 8;
-    -fx-text-fill: white;
-    -fx-prompt-text-fill: #64748b;
+.chart { -fx-background-color: transparent; -fx-legend-visible: false; -fx-padding: 10px; }
+.chart-plot-background { -fx-background-color: transparent; }
+.chart-content { -fx-background-color: transparent; }
+.chart-alternative-row-fill { -fx-fill: transparent; }
+.chart-horizontal-grid-lines { -fx-stroke: #334155; }
+.chart-vertical-grid-lines { -fx-stroke: transparent; }
+.axis { -fx-tick-label-fill: #94a3b8; }
+.axis-line { -fx-stroke: #334155; }
+
+/* ==========================================================
+   DIAGRAM BATANG (MENYALA DARI DALAM)
+   ========================================================== */
+.default-color0.chart-bar {
+    -fx-bar-fill: #38bdf8;
+    /* Opacity diturunkan jadi 0.4, Spread jadi 0, Blur jadi 10 */
+    -fx-effect: dropshadow(three-pass-box, rgba(56, 189, 248, 0.4), 10, 0, 0, 0);
+}
+.default-color1.chart-bar {
+    -fx-bar-fill: #f472b6;
+    -fx-effect: dropshadow(three-pass-box, rgba(244, 114, 182, 0.4), 10, 0, 0, 0);
 }
 
-.btn-menu-flat {
+/* ==========================================================
+   PIE CHART (SOLID NEON + STRONG GLOW DARI DALAM)
+   ========================================================== */
+.default-color0.chart-pie {
+    -fx-pie-color: #38bdf8; /* Cyan Cerah */
+    -fx-effect: dropshadow(three-pass-box, rgba(56, 189, 248, 0.9), 20, 0.5, 0, 0);
+}
+.default-color1.chart-pie {
+    -fx-pie-color: #f472b6; /* Magenta Cerah */
+    -fx-effect: dropshadow(three-pass-box, rgba(244, 114, 182, 0.9), 20, 0.5, 0, 0);
+}
+.default-color2.chart-pie {
+    -fx-pie-color: #fb923c; /* Orange Cerah */
+    -fx-effect: dropshadow(three-pass-box, rgba(251, 146, 60, 0.9), 20, 0.5, 0, 0);
+}
+.default-color3.chart-pie {
+    -fx-pie-color: #4ade80; /* Hijau Cerah */
+    -fx-effect: dropshadow(three-pass-box, rgba(74, 222, 128, 0.9), 20, 0.5, 0, 0);
+}
+.chart-pie {
+    -fx-stroke: #1e293b; /* Garis pemisah gelap */
+    -fx-stroke-width: 3px;
+}
+.chart-pie-label { -fx-fill: #f8fafc; -fx-font-size: 12px; -fx-font-weight: bold; }
+.chart-pie-label-line { -fx-stroke: #94a3b8; }
+
+/* --- 5. TABEL DATA --- */
+.table-view { -fx-background-color: transparent; -fx-border-color: #334155; -fx-border-radius: 8; }
+.table-view .column-header-background { -fx-background-color: #1e293b; -fx-background-radius: 8 8 0 0; }
+.table-view .column-header { -fx-background-color: transparent; -fx-border-color: transparent transparent #38bdf8 transparent; -fx-border-width: 0 0 2 0; }
+.table-view .column-header .label { -fx-text-fill: #38bdf8; -fx-font-weight: 900; }
+.table-view .corner { -fx-background-color: #1e293b; }
+.table-row-cell { -fx-background-color: #0f172a; -fx-text-fill: #94a3b8; -fx-border-color: #1e293b; -fx-border-width: 0 0 1 0; }
+.table-row-cell:odd { -fx-background-color: #151f32; }
+.table-row-cell:hover { -fx-background-color: #1e293b; }
+.table-view .empty, .table-view .filler { -fx-background-color: #0f172a; }
+
+/* --- 6. BUTTONS & UTILITIES --- */
+.btn-neon { -fx-background-color: #38bdf8; -fx-text-fill: #0f172a; -fx-font-weight: bold; -fx-background-radius: 8; }
+.btn-neon:hover { -fx-background-color: #7dd3fc; -fx-translate-y: -2px; -fx-effect: dropshadow(three-pass-box, rgba(56,189,248,0.8), 15, 0, 0, 5); -fx-cursor: hand; }
+.btn-neon:pressed { -fx-background-color: #0284c7; -fx-translate-y: 1px; -fx-effect: dropshadow(three-pass-box, rgba(56,189,248,0.3), 5, 0, 0, 1); }
+.btn-hamburger { -fx-background-color: #0f172a; -fx-text-fill: #38bdf8; -fx-font-size: 20px; }
+.search-field { -fx-background-color: #0f172a; -fx-border-color: #334155; -fx-border-radius: 8; -fx-text-fill: white; }
+.btn-menu-flat { -fx-background-color: transparent; -fx-text-fill: #94a3b8; -fx-alignment: BASELINE_LEFT; -fx-padding: 0 0 0 15; }
+
+.btn-logout { -fx-background-color: #450a0a; -fx-text-fill: #f87171; -fx-border-color: #ef4444; -fx-border-radius: 8; -fx-background-radius: 8; -fx-font-weight: bold; }
+.btn-logout:hover { -fx-background-color: #7f1d1d; -fx-cursor: hand; }
+
+/* =======================================================
+   CUSTOM LEGEND STYLING (EFEK GLOW LIST)
+   ======================================================= */
+.legend-custom-item {
     -fx-background-color: transparent;
-    -fx-text-fill: #94a3b8;
-    -fx-alignment: BASELINE_LEFT;
-    -fx-padding: 0 0 0 15;
-}
-
-.btn-logout {
-    -fx-background-color: #450a0a;
-    -fx-text-fill: #f87171;
-    -fx-border-color: #ef4444;
+    -fx-border-color: rgba(255, 255, 255, 0.05);
     -fx-border-radius: 8;
     -fx-background-radius: 8;
+    -fx-padding: 8 12 8 12;
 }
-
+.legend-custom-item:hover {
+    -fx-cursor: hand;
+    -fx-background-color: linear-gradient(to right, rgba(56, 189, 248, 0.15), rgba(244, 114, 182, 0.15));
+    -fx-border-color: linear-gradient(to right, #38bdf8, #f472b6);
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(three-pass-box, rgba(56, 189, 248, 0.4), 15, 0, 0, 0);
+    -fx-translate-y: -1px;
+}
