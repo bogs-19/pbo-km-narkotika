@@ -114,3 +114,38 @@
     -fx-effect: dropshadow(three-pass-box, rgba(56, 189, 248, 0.4), 15, 0, 0, 0);
     -fx-translate-y: -1px;
 }
+
+.bar-pilar {
+    -fx-background-radius: 4;
+    /* Memberikan efek cahaya tipis ke area putih di sekitarnya */
+    -fx-effect: dropshadow(three-pass-box, rgba(56, 189, 248, 0.4), 10, 0, 0, 0);
+}
+
+/* INI YANG DIPERBAIKI: Menggunakan hashtag (#) untuk ID */
+#bar-1 { -fx-background-color: linear-gradient(to top, #0284c7, #38bdf8); }
+#bar-2 { -fx-background-color: linear-gradient(to top, #0f172a, #0284c7); }
+#bar-3 { -fx-background-color: linear-gradient(to top, #1e293b, #38bdf8); }
+#bar-4 { -fx-background-color: linear-gradient(to top, #0f172a, #0284c7); }
+#bar-5 { -fx-background-color: linear-gradient(to top, #0284c7, #38bdf8); }
+
+/* 2. Gambar 3D (Pop-out Effect) */
+.image-3d-pop {
+    /* Bayangan gelap bergeser ke kanan bawah (X=15, Y=15) menciptakan ilusi melayang jauh dari pilar */
+    -fx-effect: dropshadow(three-pass-box, rgba(15, 23, 42, 0.5), 25, 0.2, 15, 15);
+}
+
+/* 3. Teks 3D (Emboss/Extrude Effect) */
+.text-3d-title {
+    /* GANTI dengan nama asli yang muncul di konsol IntelliJ! */
+    -fx-font-family: "Segoe UI Black", "Arial Black";
+
+    -fx-effect: dropshadow(three-pass-box, rgba(15, 23, 42, 0.35), 2, 1.0, 4, 4);
+}
+
+.text-3d-sub {
+    /* GANTI dengan nama asli yang muncul di konsol IntelliJ! */
+    -fx-font-family: "Georgia";
+
+    -fx-font-size: 16px;
+    -fx-effect: dropshadow(three-pass-box, rgba(15, 23, 42, 0.25), 2, 1.0, 2, 2);
+}
