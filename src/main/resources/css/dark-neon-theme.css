@@ -149,3 +149,94 @@
     -fx-font-size: 16px;
     -fx-effect: dropshadow(three-pass-box, rgba(15, 23, 42, 0.25), 2, 1.0, 2, 2);
 }
+
+/* =======================================================
+   FORM MODAL STYLING (WARNA & EFEK HOVER BARU)
+   ======================================================= */
+.input-neon {
+    -fx-background-color: rgba(255, 255, 255, 0.03);
+    -fx-border-color: transparent transparent #38bdf8 transparent;
+    -fx-border-width: 0 0 2 0;
+    -fx-text-fill: #f8fafc;
+    -fx-prompt-text-fill: #475569;
+    -fx-padding: 8 10 8 10;
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Efek saat mouse lewat (Hover): Kotak sedikit lebih terang, garis bawah jadi Orange */
+.input-neon:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-border-color: transparent transparent #fb923c transparent;
+}
+
+/* Efek saat diketik (Focus): Background menyala tipis, garis bawah jadi Magenta */
+.input-neon:focused {
+    -fx-background-color: rgba(244, 114, 182, 0.1);
+    -fx-border-color: transparent transparent #f472b6 transparent;
+}
+
+/* ComboBox Dark Theme Trick */
+.combo-neon {
+    -fx-background-color: rgba(255, 255, 255, 0.03);
+    -fx-border-color: transparent transparent #38bdf8 transparent;
+    -fx-border-width: 0 0 2 0;
+}
+.combo-neon:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-border-color: transparent transparent #fb923c transparent;
+}
+.combo-neon:focused {
+    -fx-border-color: transparent transparent #f472b6 transparent;
+}
+.combo-neon .list-cell {
+    -fx-text-fill: #f8fafc;
+    -fx-padding: 8 10 8 10;
+}
+.combo-neon .arrow-button {
+    -fx-background-color: transparent;
+}
+.combo-neon .arrow {
+    -fx-background-color: #38bdf8;
+}
+.combo-neon .list-view {
+    -fx-background-color: #1e293b;
+    -fx-border-color: #f472b6; /* List dropdown bergaris magenta */
+}
+.combo-neon .list-view .list-cell:hover {
+    -fx-background-color: #f472b6; /* Pilihan di-hover jadi magenta */
+    -fx-text-fill: #0f172a;
+}
+
+/* Tombol Batal Merah */
+.btn-outline-red {
+    -fx-background-color: transparent;
+    -fx-border-color: #ef4444;
+    -fx-text-fill: #ef4444;
+    -fx-border-radius: 8;
+    -fx-font-weight: bold;
+}
+.btn-outline-red:hover {
+    -fx-background-color: #ef4444;
+    -fx-text-fill: #0f172a;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(239, 68, 68, 0.5), 10, 0, 0, 0);
+}
+
+/* Tombol Simpan Gradient (Memecah warna solid biru) */
+.btn-gradient-action {
+    /* Gradien dari Biru Cyan ke Biru Nila (Indigo) */
+    -fx-background-color: linear-gradient(to right, #38bdf8, #818cf8);
+    -fx-text-fill: #0f172a;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+}
+.btn-gradient-action:hover {
+    /* Gradien jadi lebih cerah saat di-hover */
+    -fx-background-color: linear-gradient(to right, #7dd3fc, #a5b4fc);
+    -fx-effect: dropshadow(three-pass-box, rgba(129, 140, 248, 0.6), 15, 0, 0, 0);
+    -fx-translate-y: -2px; /* Efek melayang terangkat */
+}
+.btn-gradient-action:pressed {
+    -fx-translate-y: 1px;
+    -fx-effect: none;
+}
