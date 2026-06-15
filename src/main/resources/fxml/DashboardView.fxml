@@ -18,6 +18,8 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 
 
 <BorderPane fx:id="rootPane" prefHeight="768.0" prefWidth="1366.0" stylesheets="@../css/dark-neon-theme.css" style="-fx-background-color: #0f172a;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.DashboardController">
@@ -81,151 +83,155 @@
     </left>
 
     <center>
-        <ScrollPane fitToWidth="true" stylesheets="@../css/dark-neon-theme.css" styleClass="scroll-pane">
-            <content>
-                <VBox spacing="35.0" style="-fx-background-color: transparent;">
-                    <padding>
-                        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
-                    </padding>
-                    <children>
+        <StackPane style="-fx-background-color: #0f172a;">
+            <children>
 
-                        <VBox spacing="5.0">
+                <ImageView fitHeight="700.0" fitWidth="700.0" opacity="0.15" preserveRatio="true">
+                    <image>
+                        <Image url="@../assets/icons/legal_tech_illustration.png" />
+                    </image>
+                </ImageView>
+
+                <ScrollPane fitToWidth="true" styleClass="scroll-pane" style="-fx-background-color: transparent;">
+                    <content>
+                        <VBox spacing="35.0" style="-fx-background-color: transparent;">
+                            <padding>
+                                <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+                            </padding>
                             <children>
-                                <Label text="KMS Command Center" textFill="#f8fafc" style="-fx-font-size: 32px; -fx-font-weight: 900; -fx-letter-spacing: -1px;" />
-                                <Label text="Analisis data putusan hukum narkotika terbaru." textFill="#94a3b8" style="-fx-font-size: 14px;" />
-                            </children>
-                        </VBox>
 
-                        <HBox spacing="25.0">
-                            <children>
-                                <VBox prefHeight="130.0" styleClass="card-stat" HBox.hgrow="ALWAYS">
+                                <VBox spacing="5.0">
                                     <children>
-                                        <Label text="Total Arsip" textFill="#94a3b8" style="-fx-font-size: 13px; -fx-font-weight: bold;" />
-                                        <Region VBox.vgrow="ALWAYS" />
-                                        <Label text="1,248" styleClass="text-neon-cyan" style="-fx-font-size: 42px; -fx-font-weight: 900;" />
+                                        <Label text="KMS Command Center" textFill="#f8fafc" style="-fx-font-size: 32px; -fx-font-weight: 900; -fx-letter-spacing: -1px;" />
+                                        <Label text="Analisis data putusan hukum narkotika terbaru." textFill="#94a3b8" style="-fx-font-size: 14px;" />
                                     </children>
                                 </VBox>
 
-                                <VBox prefHeight="130.0" styleClass="card-stat" HBox.hgrow="ALWAYS">
+                                <HBox spacing="25.0">
                                     <children>
-                                        <Label text="Kasus Narkotika" textFill="#94a3b8" style="-fx-font-size: 13px; -fx-font-weight: bold;" />
-                                        <Region VBox.vgrow="ALWAYS" />
-                                        <Label text="856" styleClass="text-neon-magenta" style="-fx-font-size: 42px; -fx-font-weight: 900;" />
-                                    </children>
-                                </VBox>
+                                        <VBox prefHeight="130.0" styleClass="card-stat" HBox.hgrow="ALWAYS">
+                                            <children>
+                                                <Label text="Total Arsip" textFill="#94a3b8" style="-fx-font-size: 13px; -fx-font-weight: bold;" />
+                                                <Region VBox.vgrow="ALWAYS" />
+                                                <Label text="1,248" styleClass="text-neon-cyan" style="-fx-font-size: 42px; -fx-font-weight: 900;" />
+                                            </children>
+                                        </VBox>
 
-                                <VBox prefHeight="130.0" styleClass="card-stat" HBox.hgrow="ALWAYS">
-                                    <children>
-                                        <Label text="Ekstraksi Berhasil" textFill="#94a3b8" style="-fx-font-size: 13px; -fx-font-weight: bold;" />
-                                        <Region VBox.vgrow="ALWAYS" />
-                                        <Label text="98%" styleClass="text-neon-orange" style="-fx-font-size: 48px; -fx-font-weight: 900;" />
-                                    </children>
-                                </VBox>
-                            </children>
-                        </HBox>
+                                        <VBox prefHeight="130.0" styleClass="card-stat" HBox.hgrow="ALWAYS">
+                                            <children>
+                                                <Label text="Kasus Narkotika" textFill="#94a3b8" style="-fx-font-size: 13px; -fx-font-weight: bold;" />
+                                                <Region VBox.vgrow="ALWAYS" />
+                                                <Label text="856" styleClass="text-neon-magenta" style="-fx-font-size: 42px; -fx-font-weight: 900;" />
+                                            </children>
+                                        </VBox>
 
-                        <HBox spacing="25.0" prefHeight="300.0">
-                            <children>
-                                <VBox styleClass="card-stat" HBox.hgrow="ALWAYS">
-                                    <children>
-                                        <Label text="Tren Kasus 6 Bulan Terakhir" textFill="#f8fafc" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
-                                        <BarChart fx:id="chartTrenKasus" animated="false" VBox.vgrow="ALWAYS">
-                                            <xAxis><CategoryAxis side="BOTTOM" /></xAxis>
-                                            <yAxis><NumberAxis side="LEFT" /></yAxis>
-                                        </BarChart>
-                                    </children>
-                                </VBox>
-
-                                <VBox styleClass="card-stat" prefWidth="480.0">
-                                    <children>
-                                        <Label text="Klasifikasi Narkotika" textFill="#f8fafc" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
-                                        <Region prefHeight="15.0" />
-
-                                        <HBox spacing="20.0" VBox.vgrow="ALWAYS" alignment="CENTER_LEFT">
-
-                                            <StackPane>
-                                                <PieChart fx:id="chartKlasifikasi" labelsVisible="false" legendVisible="false" prefWidth="200.0" prefHeight="200.0" />
-
-                                                <Circle fill="#1e293b" radius="50.0" />
-
-                                                <VBox alignment="CENTER" spacing="0">
-                                                    <children>
-                                                        <Label text="98%" styleClass="text-neon-orange" style="-fx-font-size: 28px; -fx-font-weight: 900;" />
-                                                        <Label text="Ekstraksi Berhasil" textFill="#f8fafc" style="-fx-font-size: 8px; -fx-font-weight: bold;" />
-                                                        <Label text="856 Kasus" textFill="#94a3b8" style="-fx-font-size: 9px;" />
-                                                    </children>
-                                                </VBox>
-                                            </StackPane>
-
-                                            <VBox spacing="12.0" HBox.hgrow="ALWAYS" alignment="CENTER_LEFT">
-                                                <children>
-
-                                                    <VBox styleClass="legend-custom-item" prefWidth="180.0">
-                                                        <children>
-                                                            <HBox alignment="CENTER_LEFT" spacing="8.0">
-                                                                <Circle fill="#38bdf8" radius="5.0" />
-                                                                <Label text="GOLONGAN I" styleClass="text-neon-cyan" style="-fx-font-size: 12px; -fx-font-weight: bold;"/>
-                                                            </HBox>
-                                                            <HBox alignment="BASELINE_LEFT" spacing="20.0">
-                                                                <Label text="60%" textFill="#f8fafc" style="-fx-font-size: 18px; -fx-font-weight: 900;"/>
-                                                                <Label text="513" textFill="#94a3b8" style="-fx-font-size: 13px;"/>
-                                                            </HBox>
-                                                        </children>
-                                                    </VBox>
-
-                                                    <VBox styleClass="legend-custom-item" prefWidth="180.0">
-                                                        <children>
-                                                            <HBox alignment="CENTER_LEFT" spacing="8.0">
-                                                                <Circle fill="#f472b6" radius="5.0" />
-                                                                <Label text="GOLONGAN II" styleClass="text-neon-magenta" style="-fx-font-size: 12px; -fx-font-weight: bold;"/>
-                                                            </HBox>
-                                                            <HBox alignment="BASELINE_LEFT" spacing="20.0">
-                                                                <Label text="25%" textFill="#f8fafc" style="-fx-font-size: 18px; -fx-font-weight: 900;"/>
-                                                                <Label text="214" textFill="#94a3b8" style="-fx-font-size: 13px;"/>
-                                                            </HBox>
-                                                        </children>
-                                                    </VBox>
-
-                                                </children>
-                                            </VBox>
-
-                                        </HBox>
-                                    </children>
-                                </VBox>
-                            </children>
-                        </HBox>
-
-                        <VBox spacing="15.0" VBox.vgrow="ALWAYS">
-                            <children>
-                                <HBox alignment="CENTER_LEFT" spacing="15.0">
-                                    <children>
-                                        <Label text="Data Putusan Terbaru" textFill="#f8fafc" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
-                                        <Region HBox.hgrow="ALWAYS" />
-                                        <TextField fx:id="txtSearch" prefWidth="250.0" promptText="Cari data..." styleClass="search-field" />
-                                        <Button fx:id="btnTambahPutusan" mnemonicParsing="false" styleClass="btn-neon" text="+ Tambah Data">
-                                            <cursor><Cursor fx:constant="HAND" /></cursor>
-                                        </Button>
+                                        <VBox prefHeight="130.0" styleClass="card-stat" HBox.hgrow="ALWAYS">
+                                            <children>
+                                                <Label text="Ekstraksi Berhasil" textFill="#94a3b8" style="-fx-font-size: 13px; -fx-font-weight: bold;" />
+                                                <Region VBox.vgrow="ALWAYS" />
+                                                <Label text="98%" styleClass="text-neon-orange" style="-fx-font-size: 48px; -fx-font-weight: 900;" />
+                                            </children>
+                                        </VBox>
                                     </children>
                                 </HBox>
 
-                                <TableView fx:id="tablePutusan" prefHeight="450.0">
-                                    <columns>
-                                        <TableColumn fx:id="colNoPutusan" prefWidth="180.0" text="No. Putusan" />
-                                        <TableColumn fx:id="colTanggal" prefWidth="120.0" text="Tanggal" />
-                                        <TableColumn fx:id="colTerdakwa" prefWidth="250.0" text="Terdakwa" />
-                                        <TableColumn fx:id="colKlasifikasi" prefWidth="150.0" text="Klasifikasi" />
-                                        <TableColumn fx:id="colAksi" prefWidth="100.0" text="Aksi" />
-                                    </columns>
-                                    <columnResizePolicy>
-                                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                                    </columnResizePolicy>
-                                </TableView>
+                                <HBox spacing="25.0" prefHeight="300.0">
+                                    <children>
+                                        <VBox styleClass="card-stat" HBox.hgrow="ALWAYS">
+                                            <children>
+                                                <Label text="Tren Kasus 6 Bulan Terakhir" textFill="#f8fafc" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+                                                <BarChart fx:id="chartTrenKasus" animated="false" VBox.vgrow="ALWAYS">
+                                                    <xAxis><CategoryAxis side="BOTTOM" /></xAxis>
+                                                    <yAxis><NumberAxis side="LEFT" /></yAxis>
+                                                </BarChart>
+                                            </children>
+                                        </VBox>
+
+                                        <VBox styleClass="card-stat" prefWidth="480.0">
+                                            <children>
+                                                <Label text="Klasifikasi Narkotika" textFill="#f8fafc" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+                                                <Region prefHeight="15.0" />
+
+                                                <HBox spacing="20.0" VBox.vgrow="ALWAYS" alignment="CENTER_LEFT">
+
+                                                    <StackPane>
+                                                        <PieChart fx:id="chartKlasifikasi" labelsVisible="false" legendVisible="false" prefWidth="200.0" prefHeight="200.0" />
+                                                        <Circle fill="#1e293b" radius="50.0" />
+                                                        <VBox alignment="CENTER" spacing="0">
+                                                            <children>
+                                                                <Label text="98%" styleClass="text-neon-orange" style="-fx-font-size: 28px; -fx-font-weight: 900;" />
+                                                                <Label text="Ekstraksi Berhasil" textFill="#f8fafc" style="-fx-font-size: 8px; -fx-font-weight: bold;" />
+                                                                <Label text="856 Kasus" textFill="#94a3b8" style="-fx-font-size: 9px;" />
+                                                            </children>
+                                                        </VBox>
+                                                    </StackPane>
+
+                                                    <VBox spacing="12.0" HBox.hgrow="ALWAYS" alignment="CENTER_LEFT">
+                                                        <children>
+                                                            <VBox styleClass="legend-custom-item" prefWidth="180.0">
+                                                                <children>
+                                                                    <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                                                        <Circle fill="#38bdf8" radius="5.0" />
+                                                                        <Label text="GOLONGAN I" styleClass="text-neon-cyan" style="-fx-font-size: 12px; -fx-font-weight: bold;"/>
+                                                                    </HBox>
+                                                                    <HBox alignment="BASELINE_LEFT" spacing="20.0">
+                                                                        <Label text="60%" textFill="#f8fafc" style="-fx-font-size: 18px; -fx-font-weight: 900;"/>
+                                                                        <Label text="513" textFill="#94a3b8" style="-fx-font-size: 13px;"/>
+                                                                    </HBox>
+                                                                </children>
+                                                            </VBox>
+                                                            <VBox styleClass="legend-custom-item" prefWidth="180.0">
+                                                                <children>
+                                                                    <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                                                        <Circle fill="#f472b6" radius="5.0" />
+                                                                        <Label text="GOLONGAN II" styleClass="text-neon-magenta" style="-fx-font-size: 12px; -fx-font-weight: bold;"/>
+                                                                    </HBox>
+                                                                    <HBox alignment="BASELINE_LEFT" spacing="20.0">
+                                                                        <Label text="25%" textFill="#f8fafc" style="-fx-font-size: 18px; -fx-font-weight: 900;"/>
+                                                                        <Label text="214" textFill="#94a3b8" style="-fx-font-size: 13px;"/>
+                                                                    </HBox>
+                                                                </children>
+                                                            </VBox>
+                                                        </children>
+                                                    </VBox>
+                                                </HBox>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+
+                                <VBox spacing="15.0" VBox.vgrow="ALWAYS">
+                                    <children>
+                                        <HBox alignment="CENTER_LEFT" spacing="15.0">
+                                            <children>
+                                                <Label text="Data Putusan Terbaru" textFill="#f8fafc" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+                                                <Region HBox.hgrow="ALWAYS" />
+                                                <TextField fx:id="txtSearch" prefWidth="250.0" promptText="Cari data..." styleClass="search-field" />
+                                                <Button fx:id="btnTambahPutusan" mnemonicParsing="false" styleClass="btn-neon" text="+ Tambah Data">
+                                                    <cursor><Cursor fx:constant="HAND" /></cursor>
+                                                </Button>
+                                            </children>
+                                        </HBox>
+
+                                        <TableView fx:id="tablePutusan" prefHeight="450.0">
+                                            <columns>
+                                                <TableColumn fx:id="colNoPutusan" prefWidth="180.0" text="No. Putusan" />
+                                                <TableColumn fx:id="colTanggal" prefWidth="120.0" text="Tanggal" />
+                                                <TableColumn fx:id="colTerdakwa" prefWidth="250.0" text="Terdakwa" />
+                                                <TableColumn fx:id="colKlasifikasi" prefWidth="150.0" text="Klasifikasi" />
+                                                <TableColumn fx:id="colAksi" prefWidth="100.0" text="Aksi" />
+                                            </columns>
+                                            <columnResizePolicy>
+                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                            </columnResizePolicy>
+                                        </TableView>
+                                    </children>
+                                </VBox>
                             </children>
                         </VBox>
-
-                    </children>
-                </VBox>
-            </content>
-        </ScrollPane>
+                    </content>
+                </ScrollPane>
+            </children>
+        </StackPane>
     </center>
 </BorderPane>
