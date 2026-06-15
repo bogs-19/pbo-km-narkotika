@@ -71,13 +71,13 @@
                                 <VBox spacing="5.0">
                                     <children>
                                         <Label text="Email / Username" textFill="#94a3b8" style="-fx-font-size: 12px;"/>
-                                        <TextField fx:id="txtUsername" promptText="Masukkan username admin..." style="-fx-background-color: transparent; -fx-border-color: #38bdf8; -fx-border-width: 0 0 2 0; -fx-text-fill: #f8fafc; -fx-prompt-text-fill: #475569; -fx-padding: 5 0 5 0;"/>
+                                        <TextField fx:id="txtUsername" promptText="Gunakan: admin" style="-fx-background-color: transparent; -fx-border-color: #38bdf8; -fx-border-width: 0 0 2 0; -fx-text-fill: #f8fafc; -fx-prompt-text-fill: #475569; -fx-padding: 5 0 5 0;"/>
                                     </children>
                                 </VBox>
                                 <VBox spacing="5.0">
                                     <children>
                                         <Label text="Password" textFill="#94a3b8" style="-fx-font-size: 12px;"/>
-                                        <PasswordField fx:id="txtPassword" promptText="Masukkan password..." style="-fx-background-color: transparent; -fx-border-color: #38bdf8; -fx-border-width: 0 0 2 0; -fx-text-fill: #f8fafc; -fx-prompt-text-fill: #475569; -fx-padding: 5 0 5 0;"/>
+                                        <PasswordField fx:id="txtPassword" promptText="Gunakan: admin123" style="-fx-background-color: transparent; -fx-border-color: #38bdf8; -fx-border-width: 0 0 2 0; -fx-text-fill: #f8fafc; -fx-prompt-text-fill: #475569; -fx-padding: 5 0 5 0;"/>
                                     </children>
                                 </VBox>
                             </children>
