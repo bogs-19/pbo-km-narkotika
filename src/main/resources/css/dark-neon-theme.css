@@ -1,7 +1,3 @@
-/* =======================================================
-   TEMA DARK-NEON KMS NARKOTIKA (BUG FIX V1.5)
-   ======================================================= */
-
 .text-neon-cyan { -fx-text-fill: #38bdf8; }
 .text-neon-magenta { -fx-text-fill: #f472b6; }
 .text-neon-orange { -fx-text-fill: #fb923c; }
@@ -35,22 +31,19 @@
 .axis { -fx-tick-label-fill: #94a3b8; }
 .axis-line { -fx-stroke: #334155; }
 
-/* ==========================================================
-   DIAGRAM BATANG (MENYALA DARI DALAM)
-   ========================================================== */
 .default-color0.chart-bar {
-    -fx-bar-fill: #38bdf8;
-    /* Opacity diturunkan jadi 0.4, Spread jadi 0, Blur jadi 10 */
-    -fx-effect: dropshadow(three-pass-box, rgba(56, 189, 248, 0.4), 10, 0, 0, 0);
-}
-.default-color1.chart-bar {
-    -fx-bar-fill: #f472b6;
-    -fx-effect: dropshadow(three-pass-box, rgba(244, 114, 182, 0.4), 10, 0, 0, 0);
+    -fx-background-color: linear-gradient(to top, rgba(15, 23, 42, 0.8), #38bdf8);
+    -fx-background-radius: 8 8 0 0;
+    -fx-background-insets: 0;
+    -fx-effect: dropshadow(three-pass-box, rgba(56, 189, 248, 0.6), 15, 0, 0, 0);
 }
 
-/* ==========================================================
-   PIE CHART (SOLID NEON + STRONG GLOW DARI DALAM)
-   ========================================================== */
+.default-color0.chart-bar:hover {
+    -fx-background-color: linear-gradient(to top, rgba(15, 23, 42, 0.8), #7dd3fc);
+    -fx-effect: dropshadow(three-pass-box, rgba(125, 211, 252, 0.9), 20, 0, 0, 0);
+    -fx-cursor: hand;
+}
+
 .default-color0.chart-pie {
     -fx-pie-color: #38bdf8; /* Cyan Cerah */
     -fx-effect: dropshadow(three-pass-box, rgba(56, 189, 248, 0.9), 20, 0.5, 0, 0);
@@ -74,7 +67,6 @@
 .chart-pie-label { -fx-fill: #f8fafc; -fx-font-size: 12px; -fx-font-weight: bold; }
 .chart-pie-label-line { -fx-stroke: #94a3b8; }
 
-/* --- 5. TABEL DATA --- */
 .table-view { -fx-background-color: transparent; -fx-border-color: #334155; -fx-border-radius: 8; }
 .table-view .column-header-background { -fx-background-color: #1e293b; -fx-background-radius: 8 8 0 0; }
 .table-view .column-header { -fx-background-color: transparent; -fx-border-color: transparent transparent #38bdf8 transparent; -fx-border-width: 0 0 2 0; }
@@ -85,7 +77,6 @@
 .table-row-cell:hover { -fx-background-color: #1e293b; }
 .table-view .empty, .table-view .filler { -fx-background-color: #0f172a; }
 
-/* --- 6. BUTTONS & UTILITIES --- */
 .btn-neon { -fx-background-color: #38bdf8; -fx-text-fill: #0f172a; -fx-font-weight: bold; -fx-background-radius: 8; }
 .btn-neon:hover { -fx-background-color: #7dd3fc; -fx-translate-y: -2px; -fx-effect: dropshadow(three-pass-box, rgba(56,189,248,0.8), 15, 0, 0, 5); -fx-cursor: hand; }
 .btn-neon:pressed { -fx-background-color: #0284c7; -fx-translate-y: 1px; -fx-effect: dropshadow(three-pass-box, rgba(56,189,248,0.3), 5, 0, 0, 1); }
@@ -96,9 +87,6 @@
 .btn-logout { -fx-background-color: #450a0a; -fx-text-fill: #f87171; -fx-border-color: #ef4444; -fx-border-radius: 8; -fx-background-radius: 8; -fx-font-weight: bold; }
 .btn-logout:hover { -fx-background-color: #7f1d1d; -fx-cursor: hand; }
 
-/* =======================================================
-   CUSTOM LEGEND STYLING (EFEK GLOW LIST)
-   ======================================================= */
 .legend-custom-item {
     -fx-background-color: transparent;
     -fx-border-color: rgba(255, 255, 255, 0.05);
@@ -117,42 +105,30 @@
 
 .bar-pilar {
     -fx-background-radius: 4;
-    /* Memberikan efek cahaya tipis ke area putih di sekitarnya */
     -fx-effect: dropshadow(three-pass-box, rgba(56, 189, 248, 0.4), 10, 0, 0, 0);
 }
 
-/* INI YANG DIPERBAIKI: Menggunakan hashtag (#) untuk ID */
 #bar-1 { -fx-background-color: linear-gradient(to top, #0284c7, #38bdf8); }
 #bar-2 { -fx-background-color: linear-gradient(to top, #0f172a, #0284c7); }
 #bar-3 { -fx-background-color: linear-gradient(to top, #1e293b, #38bdf8); }
 #bar-4 { -fx-background-color: linear-gradient(to top, #0f172a, #0284c7); }
 #bar-5 { -fx-background-color: linear-gradient(to top, #0284c7, #38bdf8); }
 
-/* 2. Gambar 3D (Pop-out Effect) */
 .image-3d-pop {
-    /* Bayangan gelap bergeser ke kanan bawah (X=15, Y=15) menciptakan ilusi melayang jauh dari pilar */
     -fx-effect: dropshadow(three-pass-box, rgba(15, 23, 42, 0.5), 25, 0.2, 15, 15);
 }
 
-/* 3. Teks 3D (Emboss/Extrude Effect) */
 .text-3d-title {
-    /* GANTI dengan nama asli yang muncul di konsol IntelliJ! */
     -fx-font-family: "Segoe UI Black", "Arial Black";
-
     -fx-effect: dropshadow(three-pass-box, rgba(15, 23, 42, 0.35), 2, 1.0, 4, 4);
 }
 
 .text-3d-sub {
-    /* GANTI dengan nama asli yang muncul di konsol IntelliJ! */
     -fx-font-family: "Georgia";
-
     -fx-font-size: 16px;
     -fx-effect: dropshadow(three-pass-box, rgba(15, 23, 42, 0.25), 2, 1.0, 2, 2);
 }
 
-/* =======================================================
-   FORM MODAL STYLING (WARNA & EFEK HOVER BARU)
-   ======================================================= */
 .input-neon {
     -fx-background-color: rgba(255, 255, 255, 0.03);
     -fx-border-color: transparent transparent #38bdf8 transparent;
@@ -163,19 +139,16 @@
     -fx-font-family: "Segoe UI", Arial, sans-serif;
 }
 
-/* Efek saat mouse lewat (Hover): Kotak sedikit lebih terang, garis bawah jadi Orange */
 .input-neon:hover {
     -fx-background-color: rgba(255, 255, 255, 0.08);
     -fx-border-color: transparent transparent #fb923c transparent;
 }
 
-/* Efek saat diketik (Focus): Background menyala tipis, garis bawah jadi Magenta */
 .input-neon:focused {
     -fx-background-color: rgba(244, 114, 182, 0.1);
     -fx-border-color: transparent transparent #f472b6 transparent;
 }
 
-/* ComboBox Dark Theme Trick */
 .combo-neon {
     -fx-background-color: rgba(255, 255, 255, 0.03);
     -fx-border-color: transparent transparent #38bdf8 transparent;
@@ -188,7 +161,9 @@
 .combo-neon:focused {
     -fx-border-color: transparent transparent #f472b6 transparent;
 }
-.combo-neon .list-cell {
+
+/* Teks yang tampil di kotak combobox saat tertutup */
+.combo-neon > .list-cell {
     -fx-text-fill: #f8fafc;
     -fx-padding: 8 10 8 10;
 }
@@ -198,16 +173,35 @@
 .combo-neon .arrow {
     -fx-background-color: #38bdf8;
 }
-.combo-neon .list-view {
-    -fx-background-color: #1e293b;
-    -fx-border-color: #f472b6; /* List dropdown bergaris magenta */
-}
-.combo-neon .list-view .list-cell:hover {
-    -fx-background-color: #f472b6; /* Pilihan di-hover jadi magenta */
-    -fx-text-fill: #0f172a;
+
+/* TARGET KUSUS UNTUK JENDELA POPUP DROPDOWN (Ini rahasianya!) */
+.combo-box-popup .list-view {
+    -fx-background-color: #1e293b; /* Background kotak dropdown */
+    -fx-border-color: #f472b6;
+    -fx-border-width: 1px;
 }
 
-/* Tombol Batal Merah */
+/* Memaksa background tiap opsi menjadi gelap dan teks menjadi putih */
+.combo-box-popup .list-view .list-cell {
+    -fx-background-color: #1e293b;
+    -fx-text-fill: #f8fafc;
+    -fx-padding: 8 12 8 12;
+}
+
+/* Warna saat opsi di-hover / dipilih */
+.combo-box-popup .list-view .list-cell:filled:hover,
+.combo-box-popup .list-view .list-cell:filled:selected:hover {
+    -fx-background-color: #f472b6;
+    -fx-text-fill: #0f172a;
+    -fx-cursor: hand;
+}
+
+/* Warna opsi yang sedang aktif terpilih */
+.combo-box-popup .list-view .list-cell:filled:selected {
+    -fx-background-color: rgba(56, 189, 248, 0.2);
+    -fx-text-fill: #38bdf8;
+}
+
 .btn-outline-red {
     -fx-background-color: transparent;
     -fx-border-color: #ef4444;
@@ -222,21 +216,24 @@
     -fx-effect: dropshadow(three-pass-box, rgba(239, 68, 68, 0.5), 10, 0, 0, 0);
 }
 
-/* Tombol Simpan Gradient (Memecah warna solid biru) */
 .btn-gradient-action {
-    /* Gradien dari Biru Cyan ke Biru Nila (Indigo) */
     -fx-background-color: linear-gradient(to right, #38bdf8, #818cf8);
     -fx-text-fill: #0f172a;
     -fx-font-weight: bold;
     -fx-background-radius: 8;
 }
 .btn-gradient-action:hover {
-    /* Gradien jadi lebih cerah saat di-hover */
     -fx-background-color: linear-gradient(to right, #7dd3fc, #a5b4fc);
     -fx-effect: dropshadow(three-pass-box, rgba(129, 140, 248, 0.6), 15, 0, 0, 0);
-    -fx-translate-y: -2px; /* Efek melayang terangkat */
+    -fx-translate-y: -2px;
 }
 .btn-gradient-action:pressed {
     -fx-translate-y: 1px;
     -fx-effect: none;
+}
+
+.table-cell {
+    -fx-text-fill: #f8fafc;
+    -fx-alignment: CENTER-LEFT;
+    -fx-font-size: 13px;
 }

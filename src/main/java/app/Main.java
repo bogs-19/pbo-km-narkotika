@@ -6,7 +6,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-// Import tambahan untuk jalur kasar
 import java.io.File;
 import java.net.URL;
 
@@ -16,19 +15,23 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
 
         // === JURUS BYPASS CLASSPATH INTELLIJ ===
-        // Memaksa Java membaca file langsung dari path hard disk
-        File fxmlFile = new File("src/main/resources/fxml/DashboardView.fxml");
+        // Mengarahkan aplikasi untuk membuka LoginView pertama kali
+        File fxmlFile = new File("src/main/resources/fxml/LoginView.fxml");
         URL fxmlUrl = fxmlFile.toURI().toURL();
         Parent root = FXMLLoader.load(fxmlUrl);
         // =======================================
 
-        Scene scene = new Scene(root);
+        // Sesuaikan dimensi dengan desain LoginView kamu
+        Scene scene = new Scene(root, 900, 600);
 
         primaryStage.setTitle("KMS Command Center - Narkotika");
         primaryStage.setScene(scene);
 
-        primaryStage.setWidth(1366);
-        primaryStage.setHeight(768);
+        // Kunci ukuran layar agar desain login yang rapi tidak rusak ditarik user
+        primaryStage.setResizable(false);
+
+        // Memastikan jendela selalu muncul pas di tengah layar monitor
+        primaryStage.centerOnScreen();
 
         primaryStage.show();
     }
