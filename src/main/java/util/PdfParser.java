@@ -12,12 +12,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class PdfParser {
-
-    /**
-     * Mengekstrak teks mentah dari file PDF dan memotongnya menggunakan Regex.
-     * @param fileFisik Berkas dokumen PDF pengadilan.
-     * @return Array String berisi 12 elemen yang siap diubah menjadi objek Putusan.
-     */
     public static String[] ekstrakTeksPDF(File fileFisik) {
         String[] hasilData = new String[12];
 
@@ -27,11 +21,7 @@ public class PdfParser {
 
             PDFTextStripper stripper = new PDFTextStripper();
             String teksMentah = stripper.getText(document);
-
-            // ==========================================================
-            // REGEX ENGINE: Logika Pemotongan Teks
-            // ==========================================================
-
+            
             Pattern polaNomor = Pattern.compile("Nomor\\s+([\\w/.-]+)");
             Matcher matcherNomor = polaNomor.matcher(teksMentah);
             if (matcherNomor.find()) {
@@ -45,12 +35,7 @@ public class PdfParser {
 
         return hasilData;
     }
-
-    /**
-     * Fungsi Asinkronus: Membungkus eksekusi parsing masif ke latar belakang (Background Thread).
-     * @param folderPdf Direktori tempat berkas-berkas PDF disimpan.
-     * @return Task JavaFX yang dapat diikat (bind) ke ProgressBar di UI.
-     */
+    
     public static Task<List<String[]>> buatTaskEkstraksiMassal(File folderPdf) {
         return new Task<>() {
             @Override
@@ -73,10 +58,7 @@ public class PdfParser {
 
                     String[] dataSatuKasus = ekstrakTeksPDF(files[i]);
                     kumpulanDataBaru.add(dataSatuKasus);
-
-                    // ==========================================================
-                    // KOMUNIKASI UI ANTI-FREEZE [cite: 28, 29, 32]
-                    // ==========================================================
+                    
                     updateProgress(i + 1, totalFile);
 
                     updateMessage("Memproses: " + files[i].getName());
