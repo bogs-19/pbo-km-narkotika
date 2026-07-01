@@ -11,13 +11,6 @@ public class KnowledgeController {
     public KnowledgeController() {
         this.repository = new KnowledgeRepository();
     }
-
-    /**
-     * Menerima array string, memvalidasi, lalu menyimpannya ke memori.
-     * Asumsi indeks rawData:
-     * 0: No. Perkara, 1: Pengadilan, 2: Tanggal, 3: Nama, 4: Umur, 5: Jenis Narkotika,
-     * 6: Berat BB, 7: Pasal, 8: Peran, 9: Vonis Hukuman, 10: Vonis Denda, 11: Nama Hakim
-     */
     public boolean tambahPutusan(String[] rawData) {
 
         if (rawData == null || rawData.length < 12) {
