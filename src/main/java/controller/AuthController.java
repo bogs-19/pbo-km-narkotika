@@ -1,6 +1,6 @@
 package controller;
 
-import model.AdminRepository; // Memanggil layer Model
+import model.AdminRepository; 
 
 public class AuthController {
 
