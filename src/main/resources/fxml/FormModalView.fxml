@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.Cursor?>
+<?import java.net.URL?>
+
+<StackPane prefHeight="650.0" prefWidth="750.0" style="-fx-background-color: #0f172a;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ModalController">
+
+    <stylesheets>
+        <URL value="@../css/dark-neon-theme.css" />
+    </stylesheets>
+
+    <ImageView fitHeight="500.0" fitWidth="500.0" opacity="0.15" preserveRatio="true">
+        <image>
+            <Image url="@../assets/icons/legal_tech_illustration.png" />
+        </image>
+    </ImageView>
+
+    <BorderPane style="-fx-background-color: rgba(15, 23, 42, 0.85); -fx-border-color: linear-gradient(to bottom right, #38bdf8, #f472b6, #fb923c); -fx-border-width: 2.5; -fx-border-radius: 16; -fx-background-radius: 16;">
+
+        <StackPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+        </StackPane.margin>
+
+        <top>
+            <VBox alignment="CENTER" spacing="5.0" style="-fx-background-color: linear-gradient(to right, rgba(56, 189, 248, 0.15), rgba(15, 23, 42, 0.2)); -fx-background-radius: 14 14 0 0; -fx-border-color: transparent transparent rgba(255,255,255,0.05) transparent; -fx-border-width: 0 0 1 0;">
+                <padding>
+                    <Insets bottom="20.0" left="30.0" right="30.0" top="25.0" />
+                </padding>
+                <children>
+                    <Label text="AKUISISI DATA PUTUSAN" textFill="#f8fafc" style="-fx-font-size: 22px; -fx-font-weight: 900; -fx-letter-spacing: 2px; -fx-effect: dropshadow(three-pass-box, rgba(56,189,248,0.5), 10, 0, 0, 0);" />
+                    <Label text="Masukkan detail perkara pidana narkotika dengan akurat" textFill="#94a3b8" style="-fx-font-size: 13px;" />
+                </children>
+            </VBox>
+        </top>
+
+        <center>
+            <ScrollPane fitToWidth="true" styleClass="scroll-pane" style="-fx-background-color: transparent;">
+                <content>
+                    <VBox spacing="30.0">
+                        <padding>
+                            <Insets bottom="30.0" left="40.0" right="40.0" top="30.0" />
+                        </padding>
+                        <children>
+
+                            <GridPane hgap="40.0" vgap="25.0">
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" />
+                                </columnConstraints>
+
+                                <children>
+                                    <Label text="Data Perkara &amp; Pengadilan" textFill="#38bdf8" style="-fx-font-weight: bold; -fx-font-size: 14px;" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+
+                                    <VBox spacing="8.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                        <Label text="Nomor Perkara" textFill="#94a3b8" style="-fx-font-size: 12px;"/>
+                                        <TextField fx:id="txtNomor" promptText="Contoh: 1001/Pid.Sus/2024/PN Sby" styleClass="input-neon" />
+                                    </VBox>
+
+                                    <VBox spacing="8.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                                        <Label text="Nama Pengadilan" textFill="#94a3b8" style="-fx-font-size: 12px;"/>
+                                        <TextField fx:id="txtPengadilan" promptText="Contoh: PN Surabaya" styleClass="input-neon" />
+                                    </VBox>
+
+                                    <VBox spacing="8.0" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                                        <Label text="Tanggal Putusan" textFill="#94a3b8" style="-fx-font-size: 12px;"/>
+                                        <TextField fx:id="txtTanggal" promptText="YYYY-MM-DD" styleClass="input-neon" />
+                                    </VBox>
+
+                                    <VBox spacing="8.0" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                                        <Label text="Nama Hakim Ketua" textFill="#94a3b8" style="-fx-font-size: 12px;"/>
+                                        <TextField fx:id="txtHakim" promptText="Masukkan nama hakim..." styleClass="input-neon" />
+                                    </VBox>
+
+                                    <VBox spacing="8.0" GridPane.columnIndex="0" GridPane.rowIndex="5">
+                                        <Label text="Pasal yang Dilanggar" textFill="#94a3b8" style="-fx-font-size: 12px;"/>
+                                        <TextField fx:id="txtPasal" promptText="Contoh: Pasal 114 ayat (2)" styleClass="input-neon" />
+                                    </VBox>
+
+                                    <Label text="Data Terdakwa &amp; Vonis" textFill="#38bdf8" style="-fx-font-weight: bold; -fx-font-size: 14px;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                                    <HBox spacing="15.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                        <VBox spacing="8.0" HBox.hgrow="ALWAYS">
+                                            <Label text="Nama Terdakwa" textFill="#94a3b8" style="-fx-font-size: 12px;"/>
+                                            <TextField fx:id="txtNama" promptText="Nama lengkap..." styleClass="input-neon" />
+                                        </VBox>
+                                        <VBox spacing="8.0" prefWidth="100.0" minWidth="100.0">
+                                            <Label text="Umur" textFill="#94a3b8" style="-fx-font-size: 12px;"/>
+                                            <TextField fx:id="txtUmur" promptText="Tahun" styleClass="input-neon" />
+                                        </VBox>
+                                    </HBox>
+
+                                    <HBox spacing="15.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                        <VBox spacing="8.0" HBox.hgrow="ALWAYS">
+                                            <Label text="Jenis Narkotika" textFill="#94a3b8" style="-fx-font-size: 12px;"/>
+                                            <ComboBox fx:id="cbJenis" maxWidth="Infinity" promptText="Pilih Jenis..." styleClass="combo-neon" />
+                                        </VBox>
+                                        <VBox spacing="8.0" prefWidth="110.0" minWidth="110.0">
+                                            <Label text="Berat (Gram)" textFill="#94a3b8" style="-fx-font-size: 12px;"/>
+                                            <TextField fx:id="txtBerat" promptText="0.00" styleClass="input-neon" />
+                                        </VBox>
+                                    </HBox>
+
+                                    <VBox spacing="8.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                        <Label text="Peran Terdakwa" textFill="#94a3b8" style="-fx-font-size: 12px;"/>
+                                        <ComboBox fx:id="cbPeran" maxWidth="Infinity" promptText="Pilih Peran..." styleClass="combo-neon" />
+                                    </VBox>
+
+                                    <HBox spacing="15.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                        <VBox spacing="8.0" HBox.hgrow="ALWAYS">
+                                            <Label text="Vonis Hukuman (Bulan)" textFill="#94a3b8" style="-fx-font-size: 12px;"/>
+                                            <TextField fx:id="txtVonis" promptText="Bulan" styleClass="input-neon" />
+                                        </VBox>
+                                    </HBox>
+
+                                    <HBox spacing="15.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                        <VBox spacing="8.0" HBox.hgrow="ALWAYS">
+                                            <Label text="Vonis Denda (Rupiah)" textFill="#94a3b8" style="-fx-font-size: 12px;"/>
+                                            <TextField fx:id="txtDenda" promptText="Rp. " styleClass="input-neon" />
+                                        </VBox>
+                                    </HBox>
+
+                                </children>
+                            </GridPane>
+
+                        </children>
+                    </VBox>
+                </content>
+            </ScrollPane>
+        </center>
+
+        <bottom>
+            <HBox alignment="CENTER_RIGHT" spacing="15.0" style="-fx-border-color: rgba(255,255,255,0.05) transparent transparent transparent; -fx-border-width: 1 0 0 0;">
+                <padding>
+                    <Insets bottom="20.0" left="30.0" right="30.0" top="20.0" />
+                </padding>
+                <children>
+                    <Label fx:id="lblError" textFill="#ef4444" style="-fx-font-size: 12px; -fx-font-weight: bold;" visible="false"/>
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Button fx:id="btnBatal" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" styleClass="btn-outline-red" text="Batal">
+                        <cursor><Cursor fx:constant="HAND" /></cursor>
+                    </Button>
+                    <Button fx:id="btnSimpan" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" styleClass="btn-gradient-action" text="Simpan Data">
+                        <cursor><Cursor fx:constant="HAND" /></cursor>
+                    </Button>
+                </children>
+            </HBox>
+        </bottom>
+
+    </BorderPane>
+</StackPane>

@@ -3,16 +3,13 @@ package model;
 import java.util.ArrayList;
 
 public class KnowledgeRepository {
-    
     private ArrayList<Putusan> daftarPutusan = new ArrayList<>();
 
-    
     public KnowledgeRepository() {
         inisialisasiDataSampel();
     }
 
     private void inisialisasiDataSampel() {
-        
         daftarPutusan.add(new Putusan("01/Pid.Sus/2026/PN.Mlg", "PN Malang", "10-01-2026", "Ahmad Fauzi", 28, "Sabu", 2, "Pasal 114 ayat 1", "Kurir", 5, 1000000000.0, "Hadi, S.H."));
         daftarPutusan.add(new Putusan("02/Pid.Sus/2026/PN.Mlg", "PN Malang", "12-01-2026", "Budi Santoso", 34, "Ganja", 50, "Pasal 111 ayat 1", "Pengguna", 4, 800000000.0, "Rian, S.H."));
         daftarPutusan.add(new Putusan("03/Pid.Sus/2026/PN.Mlg", "PN Malang", "15-01-2026", "Citra Dewi", 23, "Ekstasi", 10, "Pasal 112 ayat 1", "Kurir", 6, 1000000000.0, "Siti, S.H."));
@@ -65,7 +62,6 @@ public class KnowledgeRepository {
         daftarPutusan.add(new Putusan("50/Pid.Sus/2026/PN.Yyk", "PN Yogyakarta", "01-06-2026", "Zaskia Gotik", 32, "Sabu", 0.9, "Pasal 127 ayat 1", "Pengguna", 2, 0.0, "Tono, S.H."));
     }
 
-  
     public void simpan(Putusan p) {
         if (p != null) {
             daftarPutusan.add(p);
@@ -76,17 +72,17 @@ public class KnowledgeRepository {
         for (int i = 0; i < daftarPutusan.size(); i++) {
             if (daftarPutusan.get(i).getNomorPerkara().equalsIgnoreCase(nomorPerkara)) {
                 daftarPutusan.remove(i);
-                return true; 
+                return true;
             }
         }
-        return false; 
+        return false;
     }
 
     public ArrayList<Putusan> cari(String keyword) {
         ArrayList<Putusan> hasilParian = new ArrayList<>();
         for (Putusan p : daftarPutusan) {
-            if (p.getNomorPerkara().toLowerCase().contains(keyword.toLowerCase()) || 
-                p.getNamaTerdakwa().toLowerCase().contains(keyword.toLowerCase())) {
+            if (p.getNomorPerkara().toLowerCase().contains(keyword.toLowerCase()) ||
+                    p.getNamaTerdakwa().toLowerCase().contains(keyword.toLowerCase())) {
                 hasilParian.add(p);
             }
         }
@@ -96,5 +92,4 @@ public class KnowledgeRepository {
     public ArrayList<Putusan> getDaftarPutusan() {
         return daftarPutusan;
     }
-
 }

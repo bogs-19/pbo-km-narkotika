@@ -1,7 +1,6 @@
 package model;
 
 public class Putusan {
-   
     private String nomorPerkara;
     private String pengadilan;
     private String tanggalPutusan;
@@ -15,15 +14,12 @@ public class Putusan {
     private double vonisDenda;
     private String namaHakim;
 
-   
     private static int jumlahDibuat = 0;
 
-  
     public Putusan() {
         jumlahDibuat++;
     }
 
- 
     public Putusan(String nomorPerkara, String pengadilan, String tanggalPutusan, String namaTerdakwa,
                    int umurTerdakwa, String jenisNarkotika, double beratBarangBukti, String pasalDilanggar,
                    String peranTerdakwa, int vonisHukuman, double vonisDenda, String namaHakim) {
@@ -43,18 +39,15 @@ public class Putusan {
         jumlahDibuat++;
     }
 
-    
     public static int getJumlahDibuat() {
         return jumlahDibuat;
     }
 
-    
     @Override
     public String toString() {
         return "Nomor Perkara: " + nomorPerkara + " | Nama Terdakwa: " + namaTerdakwa;
     }
 
-   
     public String getNomorPerkara() { return nomorPerkara; }
     public void setNomorPerkara(String nomorPerkara) { this.nomorPerkara = nomorPerkara; }
 

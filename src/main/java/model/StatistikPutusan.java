@@ -10,7 +10,6 @@ public class StatistikPutusan {
     private double rataRataNominalDenda;
     private String modusJenisNarkotikaTerbanyak;
 
-    
     public StatistikPutusan(ArrayList<Putusan> daftar) {
         this.daftarPutusan = daftar;
         this.rataRataHukumanVonis = 0.0;
@@ -18,7 +17,6 @@ public class StatistikPutusan {
         this.modusJenisNarkotikaTerbanyak = "Belum Diketahui";
     }
 
-    
     public void hitungSemua() {
         if (daftarPutusan == null || daftarPutusan.isEmpty()) {
             this.rataRataHukumanVonis = 0.0;
@@ -31,12 +29,10 @@ public class StatistikPutusan {
         double totalDenda = 0;
         HashMap<String, Integer> hitungNarkotika = new HashMap<>();
 
-        
         for (Putusan p : daftarPutusan) {
             totalHukuman += p.getVonisHukuman();
             totalDenda += p.getVonisDenda();
 
-            
             String jenis = p.getJenisNarkotika() != null ? p.getJenisNarkotika().trim().toLowerCase() : "tidak diketahui";
             hitungNarkotika.put(jenis, hitungNarkotika.getOrDefault(jenis, 0) + 1);
         }
@@ -45,7 +41,6 @@ public class StatistikPutusan {
         this.rataRataHukumanVonis = (double) totalHukuman / jumlahData;
         this.rataRataNominalDenda = totalDenda / jumlahData;
 
-        
         String modusTerpilih = "Tidak Diketahui";
         int maxKemunculan = -1;
 
@@ -55,8 +50,7 @@ public class StatistikPutusan {
                 modusTerpilih = entry.getKey();
             }
         }
-        
-        
+
         if (!modusTerpilih.equals("Tidak Diketahui")) {
             this.modusJenisNarkotikaTerbanyak = modusTerpilih.substring(0, 1).toUpperCase() + modusTerpilih.substring(1);
         } else {
@@ -64,7 +58,6 @@ public class StatistikPutusan {
         }
     }
 
-    
     public double getRataRataHukumanVonis() {
         return rataRataHukumanVonis;
     }
