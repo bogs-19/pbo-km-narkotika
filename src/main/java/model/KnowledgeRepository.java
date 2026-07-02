@@ -3,16 +3,13 @@ package model;
 import java.util.ArrayList;
 
 public class KnowledgeRepository {
-    // Instansiasi Koleksi ArrayList
     private ArrayList<Putusan> daftarPutusan = new ArrayList<>();
 
-    // Konstruktor Utama dengan Injeksi Dataset Sampel (Minimal 50 Objek Hard-coded)
     public KnowledgeRepository() {
         inisialisasiDataSampel();
     }
 
     private void inisialisasiDataSampel() {
-        // Menginstansiasi 50 data kasus putusan nyata narkotika secara hard-coded
         daftarPutusan.add(new Putusan("01/Pid.Sus/2026/PN.Mlg", "PN Malang", "10-01-2026", "Ahmad Fauzi", 28, "Sabu", 2, "Pasal 114 ayat 1", "Kurir", 5, 1000000000.0, "Hadi, S.H."));
         daftarPutusan.add(new Putusan("02/Pid.Sus/2026/PN.Mlg", "PN Malang", "12-01-2026", "Budi Santoso", 34, "Ganja", 50, "Pasal 111 ayat 1", "Pengguna", 4, 800000000.0, "Rian, S.H."));
         daftarPutusan.add(new Putusan("03/Pid.Sus/2026/PN.Mlg", "PN Malang", "15-01-2026", "Citra Dewi", 23, "Ekstasi", 10, "Pasal 112 ayat 1", "Kurir", 6, 1000000000.0, "Siti, S.H."));
@@ -65,7 +62,6 @@ public class KnowledgeRepository {
         daftarPutusan.add(new Putusan("50/Pid.Sus/2026/PN.Yyk", "PN Yogyakarta", "01-06-2026", "Zaskia Gotik", 32, "Sabu", 0.9, "Pasal 127 ayat 1", "Pengguna", 2, 0.0, "Tono, S.H."));
     }
 
-    // Logika CRUD Operasi
     public void simpan(Putusan p) {
         if (p != null) {
             daftarPutusan.add(p);

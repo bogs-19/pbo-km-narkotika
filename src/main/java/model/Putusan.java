@@ -1,7 +1,6 @@
 package model;
 
 public class Putusan {
-    // 1. Atribut Privat (Private Attributes)
     private String nomorPerkara;
     private String pengadilan;
     private String tanggalPutusan;
@@ -15,17 +14,12 @@ public class Putusan {
     private double vonisDenda;
     private String namaHakim;
 
-    // Tambahan Sprint 2: Counter Variabel Statis
     private static int jumlahDibuat = 0;
 
-    // 2. Constructor Overloading
-
-    // A. No-arg Constructor (Konstruktor Kosong)
     public Putusan() {
         jumlahDibuat++;
     }
 
-    // B. Parameterized Constructor (Konstruktor Lengkap)
     public Putusan(String nomorPerkara, String pengadilan, String tanggalPutusan, String namaTerdakwa,
                    int umurTerdakwa, String jenisNarkotika, double beratBarangBukti, String pasalDilanggar,
                    String peranTerdakwa, int vonisHukuman, double vonisDenda, String namaHakim) {
@@ -45,18 +39,15 @@ public class Putusan {
         jumlahDibuat++;
     }
 
-    // Tambahan Sprint 2: Method Getter Statis
     public static int getJumlahDibuat() {
         return jumlahDibuat;
     }
 
-    // Tambahan Sprint 2: Method Overriding toString()
     @Override
     public String toString() {
         return "Nomor Perkara: " + nomorPerkara + " | Nama Terdakwa: " + namaTerdakwa;
     }
 
-    // 3. Encapsulation (Getter dan Setter)
     public String getNomorPerkara() { return nomorPerkara; }
     public void setNomorPerkara(String nomorPerkara) { this.nomorPerkara = nomorPerkara; }
 

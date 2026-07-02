@@ -10,7 +10,6 @@ public class StatistikPutusan {
     private double rataRataNominalDenda;
     private String modusJenisNarkotikaTerbanyak;
 
-    // Konstruktor yang menerima data repositori utama
     public StatistikPutusan(ArrayList<Putusan> daftar) {
         this.daftarPutusan = daftar;
         this.rataRataHukumanVonis = 0.0;
@@ -18,7 +17,6 @@ public class StatistikPutusan {
         this.modusJenisNarkotikaTerbanyak = "Belum Diketahui";
     }
 
-    // Metode fungsional algoritma matematika agregat
     public void hitungSemua() {
         if (daftarPutusan == null || daftarPutusan.isEmpty()) {
             this.rataRataHukumanVonis = 0.0;
@@ -31,12 +29,10 @@ public class StatistikPutusan {
         double totalDenda = 0;
         HashMap<String, Integer> hitungNarkotika = new HashMap<>();
 
-        // Melakukan kalkulasi iterasi matematika menyeluruh (looping loop)
         for (Putusan p : daftarPutusan) {
             totalHukuman += p.getVonisHukuman();
             totalDenda += p.getVonisDenda();
 
-            // Ambil jenis narkotika dan lakukan normalisasi teks (lowercase) untuk akurasi modus
             String jenis = p.getJenisNarkotika() != null ? p.getJenisNarkotika().trim().toLowerCase() : "tidak diketahui";
             hitungNarkotika.put(jenis, hitungNarkotika.getOrDefault(jenis, 0) + 1);
         }
@@ -45,7 +41,6 @@ public class StatistikPutusan {
         this.rataRataHukumanVonis = (double) totalHukuman / jumlahData;
         this.rataRataNominalDenda = totalDenda / jumlahData;
 
-        // Mencari modus jenis narkotika terbanyak
         String modusTerpilih = "Tidak Diketahui";
         int maxKemunculan = -1;
 
@@ -56,7 +51,6 @@ public class StatistikPutusan {
             }
         }
 
-        // Mengembalikan format teks yang rapi (Kapital huruf pertama)
         if (!modusTerpilih.equals("Tidak Diketahui")) {
             this.modusJenisNarkotikaTerbanyak = modusTerpilih.substring(0, 1).toUpperCase() + modusTerpilih.substring(1);
         } else {
@@ -64,7 +58,6 @@ public class StatistikPutusan {
         }
     }
 
-    // Getter untuk mengakses hasil perhitungan statistik
     public double getRataRataHukumanVonis() {
         return rataRataHukumanVonis;
     }
