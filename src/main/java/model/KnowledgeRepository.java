@@ -96,4 +96,5 @@ public class KnowledgeRepository {
     public ArrayList<Putusan> getDaftarPutusan() {
         return daftarPutusan;
     }
+
 }
