@@ -1,5 +1,6 @@
 package controller;
 
+
 import model.AdminRepository; 
 
 public class AuthController {
