@@ -41,7 +41,7 @@ Sebelum melakukan kompilasi dan menjalankan aplikasi, pastikan *environment* per
 ## ⚙️ Cara Kompilasi (Build Instructions)
 1. Lakukan *clone* repository ini ke mesin lokal Anda:
    ```bash
-   git clone [MASUKKAN URL GITHUB/GITLAB KALIAN DI SINI]
+   git clone https://github.com/bogs-19/pbo-km-narkotika.git
    ```
 2. Buka terminal atau command prompt, lalu navigasikan ke direktori utama proyek:
    ```bash
