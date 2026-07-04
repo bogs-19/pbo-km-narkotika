@@ -1,4 +1,4 @@
-<img width="1360" height="768" alt="image" src="https://github.com/user-attachments/assets/9dc5e947-d02d-4127-9cf5-f75fd2a54d06" /># ⚖️ KMS Putusan Pengadilan Narkotika
+# ⚖️ KMS Putusan Pengadilan Narkotika
 
 ## 📝 Deskripsi Proyek
 Aplikasi ini adalah *Knowledge Management System* (KMS) berbasis Java yang dirancang khusus untuk mengelola dan menganalisis Putusan Pengadilan Narkotika. Aplikasi ini dibangun dengan mengimplementasikan konsep *Object Oriented Programming* (OOP) secara penuh dan dipisahkan secara terstruktur menggunakan pola arsitektur **MVC (Model-View-Controller)**.
